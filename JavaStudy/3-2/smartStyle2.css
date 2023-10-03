@@ -1,0 +1,147 @@
+/* ウィンドウ幅が最大767pxまでの場合に適用(タブレット用)*/
+@media  screen and (max-width: 767px) {
+    .wrapper {
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    .header {
+        width: 300px;
+        height: 100px;
+        background-color: #141f40;
+    }
+    
+    .main {
+        width: 300px;
+        height: 250px;
+    }
+    
+    .left {
+        width: 100px;
+        height: 250px;
+        background-color: #80bfa8;
+        float: left;
+    }
+    
+    .contents {
+        width: 200px;
+        height: 250px;
+        float: right;
+    }
+    
+    .contents-top {
+        width: 200px;
+        height: 150px;
+    }
+    
+    .contents-right {
+        width: 75px;
+        height: 150px;
+        background-color: #ff9b6e;
+        float: right;
+    }
+    
+    .contents-left {
+        width: 125px;
+        height: 150px;
+        float: left;
+    }
+    
+    .contents-left-top {
+        width: 125px;
+        height: 50px;
+        background-color: #dbd400;
+    }
+    
+    .contents-left-bottom {
+        width: 125px;
+        height: 100px;
+        background-color: #0093b7;
+    }
+    
+    .contents-bottom {
+        width: 200px;
+        height: 100px;
+        background-color: #8c2727;
+    }
+    
+    .footer {
+        width: 300px;
+        height: 100px;
+        background-color: #d98d30;
+    }
+}
+
+/*ウィンドウ幅が最大479pxまでの場合に適用(スマホ用)*/
+@media  screen and (max-width: 479px) {
+    .wrapper {
+        width: 150px;
+        margin: 0 auto;
+    }
+    
+    .header {
+        width: 150px;
+        height: 100px;
+        background-color: #141f40;
+    }
+    
+    .main {
+        width: 150px;
+        height: 450px;
+    }
+    
+    .left {
+        width: 150px;
+        height: 100px;
+        background-color: #80bfa8;
+        float: none;
+    }
+    
+    .contents {
+        width: 150px;
+        height: 350px;
+        float: none;
+    }
+    
+    .contents-top {
+        width: 150px;
+        height: 250px;
+    }
+    
+    .contents-right {
+        width: 150px;
+        height: 100px;
+        background-color: #ff9b6e;
+        float: none;
+    }
+    
+    .contents-left {
+        width: 150px;
+        height: 150px;
+        float: none;
+    }
+    
+    .contents-left-top {
+        width: 150px;
+        height: 50px;
+        background-color: #dbd400;
+    }
+    
+    .contents-left-bottom {
+        width: 150px;
+        height: 100px;
+        background-color: #0093b7;
+    }
+    
+    .contents-bottom {
+        width: 150px;
+        height: 100px;
+        background-color: #8c2727;
+    }
+    
+    .footer {
+        width: 150px;
+        height: 100px;
+        background-color: #d98d30;
+    }
+}
