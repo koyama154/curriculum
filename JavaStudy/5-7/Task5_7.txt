@@ -1,0 +1,50 @@
+①下記のログから予想される問題点及び修正の仕方を教えて下さい。
+
+【問題点】
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+
+・postreSQLでパスワード認証がエラーになっている。
+・"postgres"というユーザーのパスワードが相違している。
+
+【修正の仕方】
+application.propertiesに記述しているパスワードが正しいものに修正する。
+
+spring.datasource.password = pass
+→ passが正しいパスワードで記述されているか確認する。
+
+
+②下記のログから予想される問題点及び修正の仕方を教えて下さい。
+
+【問題点1】
+org.postgresql.util.PSQLException: FATAL: database "Spring" does not exist
+
+・postreSQLに"Spring"というデータベースが存在していないためエラーになっている。
+
+【修正の仕方】
+postreSQLで"Spring"という名前のデータベースが存在しているか確認する。
+存在しない場合は、"Spring"という名前のデータベースを作成する。
+
+【問題点2】
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-03 09:47:51.647 ERROR 96049 --- [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+・'entityManagerFactory'のbeanの作成に失敗している。
+・'entityManagerFactory'をもつbeanの初期値を設定するメソッドの呼び出しに失敗している。
+・[org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]のサービスの作成に失敗している。
+
+【修正の仕方】
+application.propertiesの記述が正しいか確認する。
+Hibernateのバージョンの互換性を確認する。
+
+【問題点3】
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+・Hibernateが使用するデータベース（postgerSQL）を設定していない。
+
+【修正の仕方】
+application.propertiesにdialectを追記する。
+→ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+データベースが正しく接続できているか確認する。
