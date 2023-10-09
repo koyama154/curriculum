@@ -5,8 +5,8 @@
   <div class="container">
     <h1>ユーザー情報一覧</h1>
     <div class="float-end">
-      <a th:href="@{http://localhost:8080/user/list}" class="btn btn-primary">新規登録はこちら</a>
-    </div>
+	  <a th:href="@{/user/add}" class="btn btn-primary">新規登録はこちら</a>
+	</div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -26,7 +26,7 @@
           <td th:text="*{address}"></td>
           <td th:text="*{phone}"></td>
           <td th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
-          <td th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(user.registerDate, 'yyyy/MM/dd')}"></td>
           <td><a th:href="@{/user/{id}(id=*{id})}" class="btn btn-secondary">詳細</a></td>
         </tr>
       </tbody>
